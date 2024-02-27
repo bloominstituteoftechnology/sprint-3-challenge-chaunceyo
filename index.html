@@ -165,7 +165,7 @@
           }
         }
       
-
+        
         toggleSafety(){
           this.safetyOn = !this.safetyOn
           if(this.safetyOn){
@@ -175,8 +175,7 @@
           }
         }
       }
-      
-
+    
         
 
     
@@ -200,17 +199,17 @@
       constructor(text,page){
        this.wholeText = text;
        this.page = page;
-
+       this.pageDiff = page
       }
   
       next(){
         let result
         
-         if(this.page > this.wholeText.length){
+         if(this.page > this.wholeText.length && this.wholeText.slice(  this.page - this.pageDiff , this.page ).length === 0 ){
           result = null
         }else{
-        result =  this.wholeText.slice(  this.page , this.page + this.page )
-        this.page += this.page
+        result =  this.wholeText.slice(  this.page - this.pageDiff , this.page )
+        this.page += this.pageDiff
         }
         return result
       }
