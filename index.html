@@ -104,7 +104,7 @@
       getEveryNth(n){
         this.result = []
         for(let i = 0; i < this.ints.length; i++){
-          if(this.ints[i] % n === 1)
+          if(i % n === 0)
          this.result.push(this.ints[i])
         }
        return this.result
